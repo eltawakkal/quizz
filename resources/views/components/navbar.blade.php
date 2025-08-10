@@ -11,14 +11,14 @@
             <div class="mainbar-row rbt-navigation-center align-items-center">
                 <div class="header-left">
                     <div class="logo logo-dark">
-                        <a href="#">
-                            <img src="{{ asset('assets/images/custom/logo_pendidikan.png') }}" alt="Education Logo Images">
+                        <a href="/">
+                            <img src="{{ asset('assets/images/custom/tree_hr_logo.png') }}" alt="Education Logo Images">
                         </a>
                     </div>
 
                     <div class="logo d-none logo-light">
-                        <a href="#">
-                            <img src="{{ asset('assets/images/custom/logo_pendidikan.png') }}"
+                        <a href="/">
+                            <img src="{{ asset('assets/images/custom/tree_hr_logo.png') }}"
                                 alt="Education Logo Images">
                         </a>
                     </div>
@@ -26,20 +26,24 @@
                 <div class="rbt-main-navigation d-none d-xl-block">
                     <nav class="mainmenu-nav onepagenav">
                         <ul class="mainmenu">
-                            <li class="position-static {{ request()->is('/') ? 'current' : '' }}">
-                                <a href="{{ request()->is('/') ? '#home_section' : '/' }}">Home</a>
+                            <li class="position-static {{ request()->is('/') ? 'current active' : '' }}">
+                                <a href="/">Home</a>
                             </li>
-                            <li class="position-static">
-                                <a href="/#psikotes_section">Psikotes</a>
+                            <li class="position-static {{ Request::is('penelitian') ? 'active current' : '' }}">
+                                <a href="{{ route('course.detail') }}">Penelitian</a>
                             </li>
-                            <li class="position-static">
-                                <a href="/#why_us_section">Kenapa Kami</a>
+                            <li class="position-static {{ request()->is('luaran-penelitian') ? 'active current' : '' }}">
+                                <a href="{{ route('landing-page.luaran-penelitian') }}">Luaran Penelitian</a>
                             </li>
-                            <li class="position-static">
-                                <a href="/#testimony_section">Testimoni</a>
+                            <li class="position-static {{ request()->is('personality-test') ? 'active current' : '' }}">
+                                {{-- <a href="/#personlaity_test_section">Personlaity Test</a> --}}
+                                <a href="{{ route('landing-page.personality-test') }}">Personality Test</a>
                             </li>
-                            <li class="position-static">
-                                <a href="/#blog_section">Blog</a>
+                            <li class="position-static {{ Request::is('galery') ? 'active current' : '' }}">
+                                <a href="{{ route('landing-page.galery') }}">Galery</a>
+                            </li>
+                             <li class="position-static {{ Request::is('hubungi-kami') ? 'active current' : '' }}">
+                                <a href="{{ route('landing-page.contact-us') }}">Kerja Sama</a>
                             </li>
                         </ul>
                     </nav>
@@ -48,8 +52,8 @@
                 <div class="header-right">
                     <div class="rbt-btn-wrapper d-none d-xl-block">
                         <a class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none"
-                            href="{{ route('course.detail', 'testing') }}">
-                            <span data-text="Tes Sekarang">Tes Sekarang</span>
+                            href="{{ route('dashboard.index') }}">
+                            <span data-text="Dashboard">Dashboard</span>
                         </a>
                     </div>
 
@@ -77,14 +81,14 @@
             <div class="content">
                 <div class="logo">
                     <div class="logo logo-dark">
-                        <a href="#">
-                            <img src="{{ asset('assets/images/logo/logo.png') }}" alt="Education Logo Images">
+                        <a href="/">
+                            <img src="{{ asset('assets/images/custom/tree_hr_logo.png') }}" alt="Education Logo Images">
                         </a>
                     </div>
 
                     <div class="logo d-none logo-light">
-                        <a href="#">
-                            <img src="{{ asset('assets/images/dark/logo/logo-light.png') }}"
+                        <a href="/">
+                            <img src="{{ asset('assets/images/custom/tree_hr_logo.png') }}"
                                 alt="Education Logo Images">
                         </a>
                     </div>
@@ -93,13 +97,9 @@
                     <button class="close-button rbt-round-btn"><i class="feather-x"></i></button>
                 </div>
             </div>
-            <p class="description">Histudy is a education website template. You can customize all.</p>
-            <ul class="navbar-top-left rbt-information-list justify-content-start">
+            <ul class="navbar-top-left rbt-information-list justify-content-start mt-4">
                 <li>
-                    <a href="mailto:hello@example.com"><i class="feather-mail"></i>example@gmail.com</a>
-                </li>
-                <li>
-                    <a href="#"><i class="feather-phone"></i>(302) 555-0107</a>
+                    <a href="#"><i class="feather-phone"></i>081316005530</a>
                 </li>
             </ul>
         </div>
@@ -107,20 +107,24 @@
         <nav class="mainmenu-nav onepagenav">
             <ul class="mainmenu">
                 <ul class="mainmenu close-button">
-                    <li class="position-static current">
-                        <a href="#home_section">Home</a>
+                    <li class="position-static {{ request()->is('/') ? 'current active' : '' }}">
+                                <a href="/">Home</a>
                     </li>
-                    <li class="position-static">
-                        <a href="#psikotes_section">Psikotes</a>
+                    <li class="position-static {{ Request::is('penelitian') ? 'active current' : '' }}">
+                        <a href="{{ route('course.detail') }}">Penelitian</a>
                     </li>
-                    <li class="position-static">
-                        <a href="#why_us_section">Kenapa Kami</a>
+                    <li class="position-static {{ request()->is('luaran-penelitian') ? 'active current' : '' }}">
+                        <a href="{{ route('landing-page.luaran-penelitian') }}">Luaran Penelitian</a>
                     </li>
-                    <li class="position-static">
-                        <a href="#testimony_section">Testimoni</a>
+                    <li class="position-static {{ request()->is('personality-test') ? 'active current' : '' }}">
+                        {{-- <a href="/#personlaity_test_section">Personlaity Test</a> --}}
+                        <a href="{{ route('landing-page.personality-test') }}">Personality Test</a>
                     </li>
-                    <li class="position-static">
-                        <a href="#blog_section">Blog</a>
+                    <li class="position-static {{ Request::is('galery') ? 'active current' : '' }}">
+                        <a href="{{ route('landing-page.galery') }}">Galery</a>
+                    </li>
+                    <li class="position-static {{ Request::is('hubungi-kami') ? 'active current' : '' }}">
+                        <a href="{{ route('landing-page.contact-us') }}">Kerja Sama</a>
                     </li>
                 </ul>
             </ul>
@@ -129,12 +133,12 @@
         <div class="mobile-menu-bottom">
             <div class="rbt-btn-wrapper mb--20">
                 <a class="rbt-btn btn-border-gradient radius-round btn-sm hover-transform-none w-100 justify-content-center text-center"
-                    href="{{ route('course.detail', 'testing') }}">
-                    <span>Tes Sekarang</span>
+                    href="{{ route('dashboard.index') }}">
+                    <span>Dashboard</span>
                 </a>
             </div>
 
-            <div class="social-share-wrapper">
+            {{-- <div class="social-share-wrapper">
                 <span class="rbt-short-title d-block">Find With Us</span>
                 <ul class="social-icon social-default transparent-with-border justify-content-start mt--20">
                     <li><a href="https://www.facebook.com/">
@@ -154,7 +158,7 @@
                         </a>
                     </li>
                 </ul>
-            </div>
+            </div> --}}
         </div>
 
     </div>

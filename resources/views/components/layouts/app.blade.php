@@ -4,13 +4,13 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Quizz App - Boost Yout Carreer</title>
+    <title>{{ env('APP_NAME') }}</title>
     <meta name="robots" content="noindex, follow">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/custom/logo_pendidikan.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/custom/tree_hr_logo.png') }}">
 
     <!-- CSS  -->
     <link rel="stylesheet" href="{{ asset('assets/css/vendor/bootstrap.min.css') }}">
@@ -31,10 +31,39 @@
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/jodit.min.css') }}">
 
     <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
+
+    <style>
+        #iframe-wrapper {
+        width: 100%;
+        max-width: 100%;
+        height: 1650px;
+        overflow: hidden;
+        position: relative;
+        padding-top: 75%; /* Aspect ratio: 4:3 = 75%, 16:9 = 56.25% */
+        }
+
+        #iframe-scaler {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform-origin: top left;
+        }
+
+        #iframe-scaler iframe {
+        width: 1200px; /* Fixed width of embedded page */
+        height: 1650px; /* Fixed height of embedded page */
+        transform-origin: top left;
+        border: none;
+        }
+
+        .custom-hover-bg:hover {
+            /* background-color: #f0f0f0; */
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body class="rbt-header-sticky">
-
 
     <div id="my_switcher" class="my_switcher">
         <ul>
@@ -59,13 +88,14 @@
 
     </main>
 
+    @include('sweetalert::alert')
+
 
     <div class="rbt-progress-parent">
         <svg class="rbt-back-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
         </svg>
     </div>
-
 
     <!-- js -->
     <!-- Modernizer JS -->

@@ -17,6 +17,12 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->int('gender_id');
+            $table->string('role')->default('user'); // Added role column with default value
+            $table->string('profile_picture')->nullable(); // Added profile picture column
+            $table->string('phone_number')->nullable(); // Added phone number column
+            $table->text('address')->nullable(); // Added address column
+            $table->boolean('is_active')->default(true); // Added is_active column with default
             $table->rememberToken();
             $table->timestamps();
         });
